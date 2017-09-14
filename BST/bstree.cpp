@@ -1,6 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+<<<<<<< HEAD
+=======
+//olá
+
+
+>>>>>>> 70e5d96a14c163d5087140256ba5d690e1791e1f
 struct node{
 	int key;  							//chave de identificação do nodo	
 	node * left, * right, * parent;		//ponteiros para os filhos
@@ -30,6 +36,7 @@ void inorder (node * r){
 		inorder(r->right);
 	}
 }
+
 
 
 //insere um nodo com chave key na árvore com raiz r
