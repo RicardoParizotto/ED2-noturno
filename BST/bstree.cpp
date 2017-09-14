@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+//olá
+
 
 struct node{
 	int key;  					//chave de identificação do nodo	
@@ -25,6 +27,7 @@ node * search (node * r, int key){
 //mostra todas as chaves da árvore
 
 void * print (node * r);
+
 
 //insere um nodo com chave key na árvore com raiz r
 //retorna um ponteiro para a raiz da árvore
