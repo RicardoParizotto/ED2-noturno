@@ -17,28 +17,9 @@ struct node{
 struct rbtree{
 	node * root;
 	node * nil;
-
-	void left_rotate(node * x){
-		node * y = x->right;
-
-		x->right = y->left;
-	
-		if ( y->left != this->nil )
-			y->left->parent = x;
-
-		y->parent = x->parent;
-
-		if ( x->parent == this->nil )
-			this->root = y;
-		else if( x == x->parent->left )
-			x->parent->left = y;
-		else x->parent->right = y;
-	
-		y->left = x;
-		x->parent = y;
-	}
-
 };
+
+
 
 rbtree * Tree_inicia (){
 	rbtree * nova = (rbtree *)malloc(sizeof(rbtree));
@@ -48,7 +29,25 @@ rbtree * Tree_inicia (){
 	return nova;
 } 
 
+void left_rotate(rbtree * T, node * x){
+	node * y = x->right;
 
+	x->right = y->left;
+	
+	if ( y->left != T->nil )
+		y->left->parent = x;
+
+	y->parent = x->parent;
+
+	if ( x->parent == T->nil )
+		T->root = y;
+	else if( x == x->parent->left )
+		x->parent->left = y;
+	else x->parent->right = y;
+	
+	y->left = x;
+	x->parent = y;
+}
 
 void right_rotate (rbtree * T, node * x){
 	node * y = x->left;
