@@ -22,7 +22,7 @@ void heapify( heap * H, int i ){
 	if(RIGHT(i) <= H->size)
 		if(H->A[RIGHT(i)] > H->A[max]) max = RIGHT(i);
 	if(i != max){
-		aux = H->A[i]; H->A[i] = H->A[max]; H->A[i] = aux;
+		aux = H->A[i]; H->A[i] = H->A[max]; H->A[max] = aux;
 		heapify(H, max);
 	}
 };
