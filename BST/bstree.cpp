@@ -3,7 +3,7 @@
 
 
 struct node{
-	int key;  							//chave de identificação do nodo	
+	int key;  				//chave de identificação do nodo	
 	node * left, * right, * parent;		//ponteiros para os filhos
 };
 
