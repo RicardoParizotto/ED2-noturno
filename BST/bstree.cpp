@@ -40,12 +40,10 @@ void inorder (node * r){
 node * insert (node * r, int key){
 	node * n = (node *)malloc(sizeof(node));		//cria um novo nodo
 	n->left = n->right = n->parent = NULL;			//atualiza os valores dos ponteiros do nodo novo
-	n->key = key;
-			
+	n->key = key;		
+	
 	if(!r) return n;								// se a arvore estiver vazia
-
 	node * it = r;	
-
 	while(1){
 		if(key < it->key){
 			if(!it->left){
@@ -61,9 +59,7 @@ node * insert (node * r, int key){
 			it = it->right;
 		}		
 	}
-	
 	n->parent = it; 										//atualiza o pai do novo nodo
-
 	return r;
 }
 
